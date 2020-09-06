@@ -13,7 +13,7 @@ void sleep(int s)
 {
   time_t tmp1=time(NULL);
 	time_t tmp2=tmp1;
-	while(difftime(tmp2,tmp1)<s)//ÑÓÊ±sÃëºó½áÊø
+	while(difftime(tmp2,tmp1)<s)//å»¶æ—¶sç§’åŽç»“æŸ
 	{
 	   tmp2=time(NULL);
 	}
@@ -23,7 +23,7 @@ int main(){
     pthread_t t0;
     pthread_t t1;
 
-    // ´´½¨Ïß³ÌA
+    // åˆ›å»ºçº¿ç¨‹A
     if(pthread_create(&t0, NULL, print_a, NULL) == -1){
         puts("fail to create pthread t0");
         exit(1);
@@ -34,7 +34,7 @@ int main(){
         exit(1);
     }
 
-    // µÈ´ýÏß³Ì½áÊø
+    // ç­‰å¾…çº¿ç¨‹ç»“æŸ
     void * result;
     if(pthread_join(t0, &result) == -1){
         puts("fail to recollect t0");
@@ -51,7 +51,7 @@ int main(){
 }
 
 
-// Ïß³ÌA ·½·¨
+// çº¿ç¨‹A æ–¹æ³•
 void * print_a(void *a){
 
    int j,w;
@@ -79,7 +79,7 @@ sleep(1);
 
 
 
-void tele(int i,int x) //ÉÏÂ¥
+void tele(int i,int x) //ä¸Šæ¥¼
 {
   int dif,M[10]={0,0,0,0,0,0,0,0,0},j=0;
 
@@ -96,17 +96,17 @@ void tele(int i,int x) //ÉÏÂ¥
  case -5:;
  case -4:;
  case -3:;
- case -2:Rnow=Pnow-(i-1)/6;printf("ÏÖÔÚÂ¥²ã£º%d\n",Rnow);if(i<=2)printf("    ×´Ì¬£ºclosed-accelerate\n");else printf("    ×´Ì¬£ºclosed-move\n");break;
- case -1:Rnow=Pnow-(i-1)/6;printf("ÏÖÔÚÂ¥²ã£º%d\n",Rnow);timedown++;
+ case -2:Rnow=Pnow-(i-1)/6;printf("çŽ°åœ¨æ¥¼å±‚ï¼š%d\n",Rnow);if(i<=2)printf("    çŠ¶æ€ï¼šclosed-accelerate\n");else printf("    çŠ¶æ€ï¼šclosed-move\n");break;
+ case -1:Rnow=Pnow-(i-1)/6;printf("çŽ°åœ¨æ¥¼å±‚ï¼š%d\n",Rnow);timedown++;
         switch(timedown){
         case 0:;
-        case 1:if(i<=2)printf("    ×´Ì¬£ºclosed-accelerate\n");else printf("    ×´Ì¬£ºclosed-move\n");break;
+        case 1:if(i<=2)printf("    çŠ¶æ€ï¼šclosed-accelerate\n");else printf("    çŠ¶æ€ï¼šclosed-move\n");break;
         case 2:;
-        case 3:printf("    ×´Ì¬£ºclosed-move\n");break;
+        case 3:printf("    çŠ¶æ€ï¼šclosed-move\n");break;
         case 4:;
-        case 5:printf("    ×´Ì¬£ºclosed-decelerate\n");break;
+        case 5:printf("    çŠ¶æ€ï¼šclosed-decelerate\n");break;
                          }break;
- case  0:timeup++;printf("ÏÖÔÚÂ¥²ã£º%d\n",Rnow);printf("    ×´Ì¬£º");Dy[Rnow-1]=0;
+ case  0:timeup++;printf("çŽ°åœ¨æ¥¼å±‚ï¼š%d\n",Rnow);printf("    çŠ¶æ€ï¼š");Dy[Rnow-1]=0;
         switch(timeup){
         case 0:;
         case 1:;
@@ -118,21 +118,21 @@ void tele(int i,int x) //ÉÏÂ¥
         case 7:;
         case 8:if(Rnow!=1)printf("closing-wait\n");else printf("\n");break;
              }break;
- case 1:Rnow=(i-1)/5+Pnow;printf("ÏÖÔÚÂ¥²ã£º%d\n",Rnow);timep++;
+ case 1:Rnow=(i-1)/5+Pnow;printf("çŽ°åœ¨æ¥¼å±‚ï¼š%d\n",Rnow);timep++;
         switch(timep){
         case 0:;
-        case 1:if(i<=2)printf("    ×´Ì¬£ºclosed-accelerate\n");else printf("    ×´Ì¬£ºclosed-move\n");break;
+        case 1:if(i<=2)printf("    çŠ¶æ€ï¼šclosed-accelerate\n");else printf("    çŠ¶æ€ï¼šclosed-move\n");break;
         case 2:;
-        case 3:printf("    ×´Ì¬£ºclosed-move\n");break;
+        case 3:printf("    çŠ¶æ€ï¼šclosed-move\n");break;
         case 4:;
-        case 5:printf("    ×´Ì¬£ºclosed-decelerate\n");break;}break;
+        case 5:printf("    çŠ¶æ€ï¼šclosed-decelerate\n");break;}break;
  case 2:;
  case 3:;
  case 4:;
  case 5:;
  case 6:;
  case 7:;
- case 8:Rnow=(i-1)/5+Pnow;printf("ÏÖÔÚÂ¥²ã£º%d\n",Rnow);if(i<=2)printf("    ×´Ì¬£ºclosed-accelerate\n");else printf("    ×´Ì¬£ºclosed-move\n");break;
+ case 8:Rnow=(i-1)/5+Pnow;printf("çŽ°åœ¨æ¥¼å±‚ï¼š%d\n",Rnow);if(i<=2)printf("    çŠ¶æ€ï¼šclosed-accelerate\n");else printf("    çŠ¶æ€ï¼šclosed-move\n");break;
     }
 
 M[Rnow-1]=(M[Rnow-1]+1)%2;
@@ -151,17 +151,17 @@ void Tup(int i ,int x)
 
 	while(i)
 	{
-        printf("Ä¿±êÂ¥²ã£º%d\nÔËÐÐÊ±¼ä£º%d s\n",x,i++);
+        printf("ç›®æ ‡æ¥¼å±‚ï¼š%d\nè¿è¡Œæ—¶é—´ï¼š%d s\n",x,i++);
 
 
 		tele(i,x);
 
 
-		printf("\nÇëÊäÈëÄ¿±êÂ¥²ã£º");
+		printf("\nè¯·è¾“å…¥ç›®æ ‡æ¥¼å±‚ï¼š");
 
 		sleep(1);
 
-		system("cls"); //ÇåÆÁ
+		system("cls"); //æ¸…å±
 
 	    if(timeup==8)break;
 	}
@@ -196,7 +196,7 @@ system("cls");
     }
         }
 }
-// Ïß³ÌB ·½·¨
+// çº¿ç¨‹B æ–¹æ³•
 void * print_b(void *b){
 int i=1;
 
